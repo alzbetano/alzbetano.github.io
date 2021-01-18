@@ -1,0 +1,1 @@
+fontmake -u poema.ufo -o ttf --output-dir .

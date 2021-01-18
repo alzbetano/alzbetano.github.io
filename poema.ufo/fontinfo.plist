@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>ascender</key>
+    <integer>750</integer>
+    <key>capHeight</key>
+    <integer>700</integer>
+    <key>descender</key>
+    <integer>-250</integer>
+    <key>familyName</key>
+    <string>poema</string>
+    <key>guidelines</key>
+    <array/>
+    <key>postscriptBlueValues</key>
+    <array>
+      <integer>-12</integer>
+      <integer>0</integer>
+      <integer>700</integer>
+      <integer>712</integer>
+    </array>
+    <key>postscriptFamilyBlues</key>
+    <array/>
+    <key>postscriptFamilyOtherBlues</key>
+    <array/>
+    <key>postscriptOtherBlues</key>
+    <array/>
+    <key>postscriptStemSnapH</key>
+    <array>
+      <integer>154</integer>
+    </array>
+    <key>postscriptStemSnapV</key>
+    <array>
+      <integer>15</integer>
+      <integer>20</integer>
+    </array>
+    <key>styleName</key>
+    <string>Bold</string>
+    <key>unitsPerEm</key>
+    <integer>1000</integer>
+    <key>xHeight</key>
+    <integer>500</integer>
+  </dict>
+</plist>

@@ -1,0 +1,84 @@
+@font-face {
+  font-family: poema;
+  src: url(../poema.ttf);
+}
+body {
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+@keyframes interpolate {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 0.75;
+  }
+}
+#wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+#wrapper > * {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+#wrapper > *.cover {
+  cursor: pointer;
+}
+#wrapper > *.cover:nth-of-type(1) {
+  animation: interpolate 4s ease-in-out infinite alternate;
+  background: url("../dit.jpg");
+  background-size: 100%;
+}
+#wrapper > *.cover:nth-of-type(2) {
+  animation: interpolate 4s ease-in-out infinite alternate;
+  animation-delay: -4s;
+  background: url("../alz.jpg") white;
+  background-size: 100%;
+}
+#wrapper > *#legend {
+  font-family: poema;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  pointer-events: none;
+  font-size: 200px;
+  color: pink;
+  text-transform: uppercase;
+  font-stretch: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 100%;
+}
+#wrapper > *#controls {
+  height: 40px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.slider {
+  width: calc( 100% - 40px );
+  height: 20px;
+  position: relative;
+}
+.slider > #handle {
+  background: pink;
+  height: 30px;
+  width: 30px;
+  border-radius: 100%;
+  position: absolute;
+  margin-left: 100%;
+}
+
+/*# sourceMappingURL=styles.css.map */
