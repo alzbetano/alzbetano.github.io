@@ -1,6 +1,7 @@
 @font-face {
     font-family: poema;
-    src: url(../poema.ttf);
+    src:    url(../poema.woff2) format('woff2'),
+            url(../poema.ttf) format('truetype');
   }
 
 body {
@@ -11,6 +12,7 @@ body {
     height: 100vh;
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 @keyframes interpolate {
@@ -22,11 +24,11 @@ body {
     }
 }
 
-
 #wrapper {
     position: relative;
     width: 300px;
     height: 300px;
+    font-size: 200px;
     & > * {
         position: absolute;
         width: 100%;
@@ -48,21 +50,27 @@ body {
         &#legend {
             font-family: poema;
             // letter-spacing: -20px;
+            // background: red;
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: center;
+            
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
             user-select: none;
-            pointer-events: none;
-            font-size: 200px;
+            // pointer-events: none;
+            cursor: pointer;
+            font-size: 100%;
             color: pink;
             text-transform: uppercase;
             font-stretch: 20%;
             left: 50%;
             transform: translateX(-50%);
             width: auto;
-            height: 100%;
-            // background: red;
+            // height: 100%;
+            overflow: hidden;
         }
         &#controls {
             height: 40px;
@@ -70,6 +78,20 @@ body {
             box-sizing: border-box;
         }
     }
+    @media only screen and (max-width: 450px) {
+        & {
+          width: 200px;
+          height: 200px;
+          font-size: 100px;
+        }
+      }
+     @media only screen and (max-width: 250px) {
+        & {
+          width: 150px;
+          height: 150px;
+          font-size: 80px;
+        }
+      }
 }
 
 .slider {
@@ -83,5 +105,11 @@ body {
         border-radius: 100%;
         position: absolute;
         margin-left: 100%;
+    }
+}
+
+@media (hover:hover) {
+    #legend:hover {
+        color: white !important;
     }
 }

@@ -28,7 +28,7 @@ input[type=range] {
     border-radius: 100%;
     background: pink;
     cursor: pointer;
-    margin-top: -13px;
+    margin-top: 0px;
   }
   
   /* All the same stuff for Firefox */
@@ -49,3 +49,9 @@ input[type=range] {
     background: pink;
     cursor: pointer;
   }
+
+@media (hover:hover) {
+    .slider:hover::-moz-range-thumb {
+        background: white !important;
+    }
+}

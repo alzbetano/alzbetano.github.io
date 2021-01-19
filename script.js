@@ -3,12 +3,8 @@ const button = document.getElementById("playStop")
 const legend = document.getElementById("legend")
 const controls = document.getElementById("controls")
 let playing = false
+let dragged = false
 
-if (localStorage.getItem('value') ) {
-    value = parseFloat(localStorage['value'])
-    console.log(audio.duration)
-    controls.value = localStorage['value']
-}
 
 function playStop() {
     if (!playing) {
@@ -23,18 +19,34 @@ function playStop() {
     }
 }
 
-controls.onchange = (e) => {
-    time = e.target.value * audio.duration * 0.01
-    audio.currentTime = time
-}
+audio.loop = true
 
+audio.onloadedmetadata = () => {
+    const duration = audio.duration
+    window.setInterval(timelineCallback, 512)
+    function timelineCallback() {
+        if (playing && !dragged) {
+            value = (audio.currentTime/duration*100)%100
+            controls.value = value
+        }
+    }
+    controls.onchange = (e) => {
+        value = e.target.value % 100
+        time = value * duration * 0.01
+        audio.currentTime = time
+    }
+    
+    controls.onmousedown = () => {
+        dragged = true
+    }
+    controls.ontouchstart = () => {
+        dragged = false
+    }
 
-
-const observer = window.setInterval(timelineCallback, 1000)
-function timelineCallback() {
-    if (playing) {
-        controls.value = audio.currentTime/audio.duration*100
-        localStorage['value'] = controls.value
-        console.log(controls.value)
+    controls.ontouchend = () => {
+        dragged = false
+    }
+    controls.onmouseup = () => {
+        dragged = false
     }
 }
